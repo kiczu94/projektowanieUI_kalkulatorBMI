@@ -1,0 +1,121 @@
+﻿<Window x:Class="Tkocz_KalkulatorBMI_ProjektowanieUI.calculatorBMI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tkocz_KalkulatorBMI_ProjektowanieUI"
+        mc:Ignorable="d"
+        Title="calculatorBMI" Height="450" Width="800"
+        WindowStyle="None"
+ >
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#4b0b5b" Offset="1"/>
+                <GradientStop Color="#3f07c9" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Text="Kalkulator BMI" 
+            Grid.Row="0"
+            Grid.Column="0"
+            FontSize="15"
+            FontWeight="Medium"
+            FontFamily="Verdana"
+            VerticalAlignment="Center"
+            Margin="10,0,0,0"
+            Foreground="LightGray"></TextBlock>
+        <Grid 
+            Grid.Row="1" 
+            Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="1" 
+                       Grid.Column="1" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+                <Label MinWidth="150"
+                       FontSize="15"
+                       Content="Podaj swój wzrost [cm]"
+                       Foreground="LightGray"></Label>
+                <TextBox                    
+                    FontSize="15" 
+                    Width="200"
+                    x:Name="heightTextBox"
+                    Opacity="1"
+                    Foreground="LightGray" FontWeight="Bold" 
+                    Background="BlueViolet" 
+                    VerticalContentAlignment="Center"
+                    BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+                    />
+            </WrapPanel>
+            <WrapPanel Grid.Row="2" 
+                       Grid.Column="1" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+                <Label MinWidth="150"
+                       FontSize="15"
+                       Content="Podaj swoją wagę [kg]"
+                       Foreground="LightGray"></Label>
+                <TextBox                    
+                    FontSize="15" 
+                    Width="200"
+                    x:Name="weightTextBox"
+                    Opacity="0.7"
+                    Foreground="black" FontWeight="Bold">
+                </TextBox>
+            </WrapPanel>
+            <Button 
+                Grid.Column="1" 
+                Grid.Row="3"
+                Content="Oblicz">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Opacity" Value="0.5"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontWeight" Value="Medium"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Content" Value="Oblicz"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightBlue"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Opacity" Value="1"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150"
+                                Height="25"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" 
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

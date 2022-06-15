@@ -1,0 +1,9 @@
+﻿<Application x:Class="Tkocz_KalkulatorBMI_ProjektowanieUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Tkocz_KalkulatorBMI_ProjektowanieUI"
+             StartupUri="calculatorBMI.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
