@@ -29,5 +29,10 @@ namespace Tkocz_KalkulatorBMI_ProjektowanieUI
         {
             CalculatorBMIViewModel.calculateBMI();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
